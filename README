@@ -1,3 +1,7 @@
+This is a continuation of Robin Burchells ti-omap3-sgx-wayland-wsegl project, 
+but is adapted to use on BeagleBoneses. Also, use Autoconf for making. Below are his notes: 
+----------------------------------------------------------------------
+
 This is a proof of concept Wayland WSEGL, which enables the use of SGX
 hardware buffers as pixmaps, effectively making wayland available on SGX
 devices.
