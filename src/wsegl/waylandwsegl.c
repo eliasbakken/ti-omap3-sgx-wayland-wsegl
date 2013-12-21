@@ -592,7 +592,7 @@ static WSEGLError wseglSwapDrawable
         if (!drawable->drmbuffers[drawable->currentBackBuffer])
         {
             int32_t handle;
-            struct wl_buffer *wlbuf;
+            struct wl_resource *wlbuf;
 
             handle = drawable->exporthandles[drawable->currentBackBuffer];
             wlbuf = sgx_wlegl_create_buffer(drawable->display->sgx_wlegl,
@@ -608,7 +608,7 @@ static WSEGLError wseglSwapDrawable
             wl_proxy_set_queue((struct wl_proxy *)wlbuf, drawable->display->queue);
         }
 
-        struct wl_buffer *wlbuf = drawable->drmbuffers[drawable->currentBackBuffer];
+        struct wl_resource *wlbuf = drawable->drmbuffers[drawable->currentBackBuffer];
         wl_surface_attach(drawable->surface, wlbuf, 0, 0); 
         wl_surface_damage(drawable->surface, 0, 0, drawable->width, drawable->height);
         wl_surface_commit(drawable->surface);

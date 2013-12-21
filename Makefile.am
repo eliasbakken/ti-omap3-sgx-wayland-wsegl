@@ -1,9 +1,13 @@
 
+include wayland-scanner.mk
+
 AUTOMAKE_OPTIONS = subdir-objects
 ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS}
 
-bin_PROGRAMS = sgx-wayland
-sgx_wayland_SOURCES = src/hello.h src/hello.cc src/main.cc \
-                src/foo/foo.h src/foo/foo.cc
+bin_PROGRAMS = wsegl
+wsegl_SOURCES = src/wsegl/waylandwsegl.c
 
 dist_noinst_SCRIPTS = autogen.sh
+
+SUBDIRS = src
+dist_doc_DATA = README
